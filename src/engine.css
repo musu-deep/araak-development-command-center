@@ -1,0 +1,14 @@
+.engine-toast {
+  margin: 0 30px 14px;
+  padding: 10px 14px;
+  border: 1px solid #2b7b6b;
+  background: #12372f;
+  color: #54d8b4;
+  border-radius: 10px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.primary:disabled { opacity: .65; cursor: wait; }
+@media (max-width: 760px) { .engine-toast { margin: 0 15px 14px; } }

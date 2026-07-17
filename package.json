@@ -9,6 +9,8 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
+    "@supabase/supabase-js": "latest",
+    "@vercel/node": "latest",
     "@vitejs/plugin-react": "latest",
     "lucide-react": "latest",
     "recharts": "latest",
@@ -17,6 +19,7 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "typescript": "latest"
