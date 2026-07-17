@@ -24,9 +24,9 @@ function App() {
   const [liveData, setLiveData] = useState<any>(null);
   const [engineBusy, setEngineBusy] = useState(false);
   const [engineMessage, setEngineMessage] = useState('');
-  const loadDashboard = () => fetch('/api?action=dashboard').then(r=>r.ok?r.json():Promise.reject()).then(setLiveData).catch(()=>setLiveData(null));
+  const loadDashboard = () => fetch('/api/index?action=dashboard').then(r=>r.ok?r.json():Promise.reject()).then(setLiveData).catch(()=>setLiveData(null));
   useEffect(()=>{ loadDashboard(); const timer=setInterval(loadDashboard,60000); return()=>clearInterval(timer); },[]);
-  const runEngine = async()=>{setEngineBusy(true);setEngineMessage('');try{const r=await fetch('/api?action=run',{method:'POST'});const j=await r.json();setEngineMessage(j.ok?`اكتملت دورة التشغيل · ${j.processed} مهام`:(j.error||'تعذر التشغيل'));await loadDashboard();}catch{setEngineMessage('تعذر الاتصال بمحرك التشغيل');}finally{setEngineBusy(false);}};
+  const runEngine = async()=>{setEngineBusy(true);setEngineMessage('');try{const r=await fetch('/api/index?action=run',{method:'POST'});const j=await r.json();setEngineMessage(j.ok?`اكتملت دورة التشغيل · ${j.processed} مهام`:(j.error||'تعذر التشغيل'));await loadDashboard();}catch{setEngineMessage('تعذر الاتصال بمحرك التشغيل');}finally{setEngineBusy(false);}};
   const titles: Record<NavKey, [string, string]> = {
     overview: ['المشهد التنفيذي', 'صورة حية لما تنجزه منظومة التنمية والأكاديمية'],
     content: ['المحتوى والنشر', 'خط الإنتاج التحريري وجدولة المنصات'],
