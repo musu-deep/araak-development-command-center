@@ -40,7 +40,7 @@ npm run preview
    - `SUPABASE_SERVICE_ROLE_KEY`
    - `CRON_SECRET`
 3. أعد نشر المشروع. يظهر أعلى الواجهة `LIVE` عند نجاح الاتصال.
-4. المسارات الأساسية: `/api?action=health` و`/api?action=dashboard` و`POST /api?action=run`.
+4. المسارات الأساسية: `/api/index?action=health` و`/api/index?action=dashboard` و`POST /api/index?action=run`.
 
 مفتاح `SUPABASE_SERVICE_ROLE_KEY` يبقى في إعدادات Vercel فقط ولا يوضع في ملفات المستودع.
 
